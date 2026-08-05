@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Auction Watch — Marketing Landing
 
-## Getting Started
+Standalone marketing site for **Auction Watch**, a Telegram bot + Mini App that monitors Copart and IAAI Buy Now inventory and sends Telegram alerts when your Watches match.
 
-First, run the development server:
+This repo is the public landing page only — not the product Mini App.
+
+## Stack
+
+- Next.js (App Router)
+- Tailwind CSS v4
+- Framer Motion (hero entrance + scroll reveals)
+- Lucide icons
+- Optimized WebP/JPEG imagery in `public/images/`
+
+## Setup
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Required | Purpose |
+|----------|----------|---------|
+| `NEXT_PUBLIC_TELEGRAM_BOT_USERNAME` | Recommended | Bot username (no `@`). All primary CTAs use `https://t.me/<username>`. Falls back to `AuctionWatchBot` if unset. |
+| `NEXT_PUBLIC_SITE_URL` | Recommended for production | Canonical URL for metadata / Open Graph (e.g. `https://your-domain.vercel.app`). |
 
-## Learn More
+Example `.env.local`:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+NEXT_PUBLIC_TELEGRAM_BOT_USERNAME=YourRealBotName
+NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
+```
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Import this repo in Vercel.
+2. Set the env vars above for Production (and Preview if useful).
+3. Deploy. Framework preset: Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Optional: install the Vercel CLI (`npm i -g vercel`) for local `vercel env pull` / deploys.
+
+## Product links
+
+- Live Mini App (reference): https://auction-watch-mu.vercel.app
+- Support: https://t.me/kristijonask
+
+## Marketing gaps (do not invent into UI)
+
+Still open for future content — deliberately omitted from the page:
+
+- Voice-of-customer / target buyer language from interviews
+- Competitor comparison (names, feature matrix)
+- Testimonials or case studies with attribution
+- Stars → USD conversion (rates vary; not published here)
+- Volume metrics (alerts sent, users, win rates)
+
+## Scripts
+
+```bash
+npm run dev      # local development
+npm run build    # production build
+npm run start    # serve production build
+npm run lint     # ESLint
+```
