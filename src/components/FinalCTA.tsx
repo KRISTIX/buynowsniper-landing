@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/Reveal";
-import { TelegramCTA } from "@/components/TelegramCTA";
+import { ContactSalesCTA, TelegramCTA } from "@/components/TelegramCTA";
 
 export function FinalCTA() {
   return (
@@ -33,12 +33,7 @@ export function FinalCTA() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <TelegramCTA />
-            <a
-              href="#pricing"
-              className="cta-secondary border-ink-on-dark/45 text-ink-on-dark"
-            >
-              View pricing
-            </a>
+            <ContactSalesCTA className="border-ink-on-dark/45 text-ink-on-dark" />
           </div>
         </Reveal>
       </div>

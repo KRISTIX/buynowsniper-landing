@@ -1,6 +1,6 @@
 import { plans, site } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
-import { TelegramCTA } from "@/components/TelegramCTA";
+import { ContactSalesCTA, TelegramCTA } from "@/components/TelegramCTA";
 
 export function Pricing() {
   return (
@@ -27,7 +27,10 @@ export function Pricing() {
                 time is not prorated.
               </p>
             </div>
-            <TelegramCTA className="self-start md:self-auto" />
+            <div className="flex flex-wrap gap-3 self-start md:self-auto">
+              <TelegramCTA />
+              <ContactSalesCTA className="border-charcoal/35 text-charcoal" />
+            </div>
           </div>
         </Reveal>
 
@@ -84,11 +87,14 @@ export function Pricing() {
         </div>
 
         <Reveal delay={0.12}>
-          <p className="mt-10 max-w-2xl text-sm leading-relaxed text-steel">
-            On expiry, Watches pause until you renew. Buy Now availability
-            changes fast — always verify price and details on Copart or IAAI
-            before you buy.
-          </p>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <p className="max-w-2xl text-sm leading-relaxed text-steel">
+              On expiry, Watches pause until you renew. Buy Now availability
+              changes fast — always verify price and details on Copart or IAAI
+              before you buy. Need more Watches or a custom plan? Contact sales.
+            </p>
+            <ContactSalesCTA className="shrink-0 self-start border-charcoal/35 text-charcoal sm:self-auto" />
+          </div>
         </Reveal>
       </div>
     </section>

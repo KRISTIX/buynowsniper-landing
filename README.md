@@ -26,13 +26,15 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Variable | Required | Purpose |
 |----------|----------|---------|
-| `NEXT_PUBLIC_TELEGRAM_BOT_USERNAME` | Recommended | Bot username (no `@`). All primary CTAs use `https://t.me/<username>`. Falls back to `AuctionWatchBot` if unset. |
+| `NEXT_PUBLIC_TELEGRAM_BOT_USERNAME` | Recommended | Bot username (no `@`). Primary CTAs use `https://t.me/<username>`. Defaults to `buynowsniperbot`. |
+| `NEXT_PUBLIC_TELEGRAM_SUPPORT_USERNAME` | Recommended | Support/sales bot (no `@`). Contact sales CTAs use `https://t.me/<username>`. Defaults to `buynowsniper_supportbot`. |
 | `NEXT_PUBLIC_SITE_URL` | Recommended for production | Canonical URL for metadata / Open Graph (e.g. `https://your-domain.vercel.app`). |
 
 Example `.env.local`:
 
 ```bash
-NEXT_PUBLIC_TELEGRAM_BOT_USERNAME=YourRealBotName
+NEXT_PUBLIC_TELEGRAM_BOT_USERNAME=buynowsniperbot
+NEXT_PUBLIC_TELEGRAM_SUPPORT_USERNAME=buynowsniper_supportbot
 NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
 ```
 
@@ -46,8 +48,9 @@ Optional: install the Vercel CLI (`npm i -g vercel`) for local `vercel env pull`
 
 ## Product links
 
-- Live Mini App (reference): https://auction-watch-mu.vercel.app
-- Support: https://t.me/kristijonask
+- Mini App: https://app.buynowsniper.com
+- Bot: https://t.me/buynowsniperbot
+- Support / sales: https://t.me/buynowsniper_supportbot
 
 ## Marketing gaps (do not invent into UI)
 

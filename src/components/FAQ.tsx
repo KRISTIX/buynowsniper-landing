@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { ContactSalesCTA } from "@/components/TelegramCTA";
 import { site } from "@/lib/site";
 
 const faqs = [
@@ -23,8 +24,8 @@ const faqs = [
     a: "Treat alerts as a heads-up. Always verify price, damage, location, and availability on the auction site before you buy — inventory moves quickly.",
   },
   {
-    q: "Need help?",
-    a: `Message support on Telegram at @kristijonask.`,
+    q: "Need help or custom pricing?",
+    a: "Message our support bot on Telegram for help, custom plans, and sales.",
   },
 ] as const;
 
@@ -61,24 +62,27 @@ export function FAQ() {
                     +
                   </span>
                 </summary>
-                <p className="mt-3 max-w-2xl pr-8 text-[0.98rem] leading-relaxed text-charcoal-soft">
-                  {item.q === "Need help?" ? (
-                    <>
-                      Message support on Telegram at{" "}
+                {item.q === "Need help or custom pricing?" ? (
+                  <div className="mt-3 max-w-2xl pr-8">
+                    <p className="text-[0.98rem] leading-relaxed text-charcoal-soft">
+                      Message{" "}
                       <a
                         href={site.supportTelegram}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-charcoal underline decoration-amber/60 underline-offset-2 hover:decoration-amber"
                       >
-                        @kristijonask
-                      </a>
-                      .
-                    </>
-                  ) : (
-                    item.a
-                  )}
-                </p>
+                        @{site.supportUsername}
+                      </a>{" "}
+                      on Telegram for support, custom pricing, and sales.
+                    </p>
+                    <ContactSalesCTA className="mt-4 border-charcoal/35 text-charcoal" />
+                  </div>
+                ) : (
+                  <p className="mt-3 max-w-2xl pr-8 text-[0.98rem] leading-relaxed text-charcoal-soft">
+                    {item.a}
+                  </p>
+                )}
               </details>
             </Reveal>
           ))}

@@ -37,7 +37,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="font-medium text-charcoal hover:text-amber"
           >
-            Support
+            Contact sales
           </a>
           <a href="#pricing" className="font-medium text-charcoal hover:text-amber">
             Pricing
