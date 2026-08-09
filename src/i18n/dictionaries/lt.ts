@@ -2,11 +2,11 @@ import type { Dictionary } from "./en";
 
 export const lt: Dictionary = {
   meta: {
-    title: "Auction Watch — Copart ir IAAI Buy Now pranešimai Telegram",
+    title: "Buy Now Sniper — Copart ir IAAI Buy Now pranešimai Telegram",
     description:
       "Telegram pranešimai, kai Copart ir IAAI atsiranda Buy Now pagal jūsų Watch. Nemokamas 7 dienų bandomasis laikotarpis.",
   },
-  brand: "Auction Watch",
+  brand: "Buy Now Sniper",
   nav: {
     howItWorks: "Kaip veikia",
     pricing: "Kainos",
@@ -15,7 +15,7 @@ export const lt: Dictionary = {
     language: "Kalba",
   },
   hero: {
-    ariaLabel: "Auction Watch pagrindinis blokas",
+    ariaLabel: "Buy Now Sniper pagrindinis blokas",
     headline: "Telegram pranešimai, kai atsiranda Copart ir IAAI Buy Now atitikmenys",
     sub: "Sukurkite Watch. Gaukite kainą, žalą, vietą ir nuorodą į skelbimą — tikrinama apie kas 15 minučių.",
     cta: "Pradėti nemokamą 7 dienų bandymą",
@@ -25,7 +25,7 @@ export const lt: Dictionary = {
   support: {
     eyebrow: "Ką gaunate",
     heading: "Nustokite atnaujinti aikšteles. Pradėkite gauti atitikmenis.",
-    body: "Auction Watch stebi Copart ir IAAI Buy Now inventorių pagal jūsų taisykles ir siunčia atitikmenis į Telegram.",
+    body: "Buy Now Sniper stebi Copart ir IAAI Buy Now inventorių pagal jūsų taisykles ir siunčia atitikmenis į Telegram.",
     points: [
       {
         title: "Telegram pranešimai apie Buy Now",
@@ -37,7 +37,7 @@ export const lt: Dictionary = {
       },
       {
         title: "Perkates aukciono svetainėje",
-        body: "Auction Watch praneša. Jūs atidarote skelbimą Copart ar IAAI ir sprendžiate patys. Be automatinio statymo.",
+        body: "Buy Now Sniper praneša. Jūs atidarote skelbimą Copart ar IAAI ir sprendžiate patys. Be automatinio statymo.",
       },
     ],
     imageAlt: "Rankos laiko telefoną naktinėje aukciono aikštelėje",
@@ -49,7 +49,7 @@ export const lt: Dictionary = {
     steps: [
       {
         title: "Paleiskite botą",
-        body: "Atidarykite Auction Watch Telegram. Nemokamas 7 dienų bandomasis laikotarpis prasideda automatiškai.",
+        body: "Atidarykite Buy Now Sniper Telegram. Nemokamas 7 dienų bandomasis laikotarpis prasideda automatiškai.",
       },
       {
         title: "Sukurkite Watch",
@@ -136,14 +136,14 @@ export const lt: Dictionary = {
     items: [
       {
         q: "Kaip mokėti?",
-        a: "Tik Telegram Stars — be kortelių apmokėjimo programėlėje. Įsigykite Stars Telegram, tada pasirinkite planą Auction Watch.",
+        a: "Tik Telegram Stars — be kortelių apmokėjimo programėlėje. Įsigykite Stars Telegram, tada pasirinkite planą Buy Now Sniper.",
       },
       {
         q: "Kaip dažnai tikrinamas inventorius?",
         a: "Apie kas 15 minučių. Tai nėra realiuoju laiku ir ne akimirksniu. Skelbimai gali atsirasti ir dingti tarp patikrinimų.",
       },
       {
-        q: "Ar Auction Watch stato ar perka už mane?",
+        q: "Ar Buy Now Sniper stato ar perka už mane?",
         a: "Ne. Gaunate pranešimą su detalėmis ir nuoroda. Perkates patys Copart ar IAAI. Be automatinio statymo ir pirkimo.",
       },
       {
@@ -178,6 +178,6 @@ export const lt: Dictionary = {
     miniApp: "Mini App",
     contactSales: "Susisiekti su pardavimais",
     pricing: "Kainos",
-    copyright: "Auction Watch. Nesusijęs su Copart ar IAAI.",
+    copyright: "Buy Now Sniper. Nesusijęs su Copart ar IAAI.",
   },
 };

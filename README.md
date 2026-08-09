@@ -1,6 +1,6 @@
-# Auction Watch — Marketing Landing
+# Buy Now Sniper — Marketing Landing
 
-Standalone marketing site for **Auction Watch**, a Telegram bot + Mini App that monitors Copart and IAAI Buy Now inventory and sends Telegram alerts when your Watches match.
+Standalone marketing site for **Buy Now Sniper**, a Telegram bot + Mini App that monitors Copart and IAAI Buy Now inventory and sends Telegram alerts when your Watches match.
 
 This repo is the public landing page only — not the product Mini App.
 

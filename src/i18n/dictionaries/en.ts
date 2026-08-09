@@ -86,11 +86,11 @@ export type Dictionary = {
 
 export const en: Dictionary = {
   meta: {
-    title: "Auction Watch — Copart & IAAI Buy Now alerts on Telegram",
+    title: "Buy Now Sniper — Copart & IAAI Buy Now alerts on Telegram",
     description:
       "Telegram alerts when Copart and IAAI Buy Now listings match your Watches. Free 7-day trial.",
   },
-  brand: "Auction Watch",
+  brand: "Buy Now Sniper",
   nav: {
     howItWorks: "How it works",
     pricing: "Pricing",
@@ -99,7 +99,7 @@ export const en: Dictionary = {
     language: "Language",
   },
   hero: {
-    ariaLabel: "Auction Watch hero",
+    ariaLabel: "Buy Now Sniper hero",
     headline: "Telegram alerts when Copart & IAAI Buy Now matches appear",
     sub: "Create a Watch. Get price, damage, location, and a listing link — checked about every 15 minutes.",
     cta: "Start free 7-day trial",
@@ -110,7 +110,7 @@ export const en: Dictionary = {
   support: {
     eyebrow: "What you get",
     heading: "Stop refreshing yards. Start getting matches.",
-    body: "Auction Watch monitors Copart and IAAI Buy Now inventory for your rules and pushes matches to Telegram.",
+    body: "Buy Now Sniper monitors Copart and IAAI Buy Now inventory for your rules and pushes matches to Telegram.",
     points: [
       {
         title: "Telegram alerts for Buy Now",
@@ -122,7 +122,7 @@ export const en: Dictionary = {
       },
       {
         title: "You buy on the auction site",
-        body: "Auction Watch notifies. You open the listing on Copart or IAAI and decide. No auto-bid.",
+        body: "Buy Now Sniper notifies. You open the listing on Copart or IAAI and decide. No auto-bid.",
       },
     ],
     imageAlt: "Hands holding a phone at a night auction lot",
@@ -134,7 +134,7 @@ export const en: Dictionary = {
     steps: [
       {
         title: "Start the bot",
-        body: "Open Auction Watch on Telegram. Your free 7-day trial begins automatically.",
+        body: "Open Buy Now Sniper on Telegram. Your free 7-day trial begins automatically.",
       },
       {
         title: "Create a Watch",
@@ -222,14 +222,14 @@ export const en: Dictionary = {
     items: [
       {
         q: "How do I pay?",
-        a: "Payment is Telegram Stars only — no card checkout in the app. Buy Stars in Telegram, then purchase a plan inside Auction Watch.",
+        a: "Payment is Telegram Stars only — no card checkout in the app. Buy Stars in Telegram, then purchase a plan inside Buy Now Sniper.",
       },
       {
         q: "How often do you check inventory?",
         a: "About every 15 minutes. This is not real-time or instant. Listings can appear and sell between checks.",
       },
       {
-        q: "Does Auction Watch bid or buy for me?",
+        q: "Does Buy Now Sniper bid or buy for me?",
         a: "No. You get an alert with listing details and a link. You open Copart or IAAI and buy yourself. There is no auto-bid and no auto-buy.",
       },
       {
@@ -264,6 +264,6 @@ export const en: Dictionary = {
     miniApp: "Mini App",
     contactSales: "Contact sales",
     pricing: "Pricing",
-    copyright: "Auction Watch. Not affiliated with Copart or IAAI.",
+    copyright: "Buy Now Sniper. Not affiliated with Copart or IAAI.",
   },
 };

@@ -2,11 +2,11 @@ import type { Dictionary } from "./en";
 
 export const ru: Dictionary = {
   meta: {
-    title: "Auction Watch — оповещения Copart и IAAI Buy Now в Telegram",
+    title: "Buy Now Sniper — оповещения Copart и IAAI Buy Now в Telegram",
     description:
       "Telegram-оповещения, когда на Copart и IAAI появляются Buy Now по вашим Watch. Бесплатный пробный период 7 дней.",
   },
-  brand: "Auction Watch",
+  brand: "Buy Now Sniper",
   nav: {
     howItWorks: "Как это работает",
     pricing: "Цены",
@@ -15,7 +15,7 @@ export const ru: Dictionary = {
     language: "Язык",
   },
   hero: {
-    ariaLabel: "Auction Watch — главный экран",
+    ariaLabel: "Buy Now Sniper — главный экран",
     headline: "Telegram-оповещения, когда появляются Buy Now на Copart и IAAI",
     sub: "Создайте Watch. Получайте цену, повреждения, локацию и ссылку на лот — проверка примерно каждые 15 минут.",
     cta: "Начать бесплатный пробный период",
@@ -25,7 +25,7 @@ export const ru: Dictionary = {
   support: {
     eyebrow: "Что вы получаете",
     heading: "Хватит обновлять площадки. Получайте совпадения.",
-    body: "Auction Watch следит за Buy Now на Copart и IAAI по вашим правилам и присылает совпадения в Telegram.",
+    body: "Buy Now Sniper следит за Buy Now на Copart и IAAI по вашим правилам и присылает совпадения в Telegram.",
     points: [
       {
         title: "Оповещения о Buy Now в Telegram",
@@ -37,7 +37,7 @@ export const ru: Dictionary = {
       },
       {
         title: "Покупаете на сайте аукциона",
-        body: "Auction Watch уведомляет. Вы открываете лот на Copart или IAAI и решаете сами. Без автоставок.",
+        body: "Buy Now Sniper уведомляет. Вы открываете лот на Copart или IAAI и решаете сами. Без автоставок.",
       },
     ],
     imageAlt: "Руки держат телефон на ночной аукционной площадке",
@@ -49,7 +49,7 @@ export const ru: Dictionary = {
     steps: [
       {
         title: "Запустите бота",
-        body: "Откройте Auction Watch в Telegram. Бесплатный пробный период на 7 дней начнётся автоматически.",
+        body: "Откройте Buy Now Sniper в Telegram. Бесплатный пробный период на 7 дней начнётся автоматически.",
       },
       {
         title: "Создайте Watch",
@@ -136,14 +136,14 @@ export const ru: Dictionary = {
     items: [
       {
         q: "Как оплатить?",
-        a: "Только Telegram Stars — без оплаты картой в приложении. Купите Stars в Telegram, затем оформите план в Auction Watch.",
+        a: "Только Telegram Stars — без оплаты картой в приложении. Купите Stars в Telegram, затем оформите план в Buy Now Sniper.",
       },
       {
         q: "Как часто проверяется инвентарь?",
         a: "Примерно каждые 15 минут. Это не real-time и не мгновенно. Лоты могут появиться и уйти между проверками.",
       },
       {
-        q: "Auction Watch делает ставки или покупает за меня?",
+        q: "Buy Now Sniper делает ставки или покупает за меня?",
         a: "Нет. Вы получаете оповещение с деталями и ссылкой. Покупаете сами на Copart или IAAI. Без автоставок и автопокупки.",
       },
       {
@@ -178,6 +178,6 @@ export const ru: Dictionary = {
     miniApp: "Mini App",
     contactSales: "Связаться с продажами",
     pricing: "Цены",
-    copyright: "Auction Watch. Не аффилирован с Copart или IAAI.",
+    copyright: "Buy Now Sniper. Не аффилирован с Copart или IAAI.",
   },
 };
