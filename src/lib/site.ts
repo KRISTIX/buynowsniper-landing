@@ -18,45 +18,10 @@ export const site = {
   supportTelegram: `https://t.me/${supportUsername}`,
 } as const;
 
-export const plans = [
-  {
-    id: "trial",
-    name: "Free Trial",
-    watches: 1,
-    duration: "7 days",
-    price: "Free",
-    priceNote: "Once per user",
-    highlight: false,
-    badge: null as string | null,
-  },
-  {
-    id: "weekly",
-    name: "Weekly",
-    watches: 5,
-    duration: "7 days",
-    price: "2,500 ⭐",
-    priceNote: "Telegram Stars",
-    highlight: false,
-    badge: null as string | null,
-  },
-  {
-    id: "monthly",
-    name: "Monthly",
-    watches: 10,
-    duration: "30 days",
-    price: "5,000 ⭐",
-    priceNote: "Telegram Stars",
-    highlight: true,
-    badge: "Popular",
-  },
-  {
-    id: "quarterly",
-    name: "3-Month",
-    watches: 15,
-    duration: "90 days",
-    price: "10,000 ⭐",
-    priceNote: "Telegram Stars",
-    highlight: true,
-    badge: "Best value",
-  },
-] as const;
+/** Watch slot counts per plan (display copy lives in i18n dictionaries). */
+export const planWatches: Record<string, number> = {
+  trial: 1,
+  weekly: 5,
+  monthly: 10,
+  quarterly: 15,
+};

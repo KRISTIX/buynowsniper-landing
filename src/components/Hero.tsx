@@ -3,8 +3,13 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { TelegramCTA } from "@/components/TelegramCTA";
+import type { Dictionary } from "@/i18n/getDictionary";
 
-export function Hero() {
+type HeroProps = {
+  t: Dictionary;
+};
+
+export function Hero({ t }: HeroProps) {
   const reduce = useReducedMotion();
 
   const fade = (delay: number) =>
@@ -24,12 +29,12 @@ export function Hero() {
     <section
       id="top"
       className="relative isolate min-h-[100svh] overflow-hidden text-ink-on-dark"
-      aria-label="Auction Watch hero"
+      aria-label={t.hero.ariaLabel}
     >
       <div className="absolute inset-0 -z-10">
         <Image
           src="/images/hero-auction-lot.webp"
-          alt="Salvage auction lot at dusk with wet asphalt and sodium yard lights"
+          alt={t.hero.imageAlt}
           fill
           priority
           sizes="100vw"
@@ -51,31 +56,33 @@ export function Hero() {
             className="font-display text-[clamp(2.75rem,8vw,5.25rem)] font-semibold leading-[0.92] tracking-[0.04em] uppercase"
             {...fade(0.08)}
           >
-            Auction Watch
+            {t.brand}
           </motion.p>
 
           <motion.h1
             className="mt-5 max-w-[28rem] text-[clamp(1.2rem,2.4vw,1.55rem)] font-medium leading-snug text-[rgba(244,243,240,0.92)]"
             {...fade(0.22)}
           >
-            Telegram alerts when Copart &amp; IAAI Buy Now matches appear
+            {t.hero.headline}
           </motion.h1>
 
           <motion.p
             className="mt-4 max-w-[28rem] text-[0.98rem] leading-relaxed text-[rgba(244,243,240,0.72)]"
             {...fade(0.34)}
           >
-            Create a Watch. Get price, damage, location, and a listing link —
-            checked about every 15 minutes.
+            {t.hero.sub}
           </motion.p>
 
           <motion.div
             className="mt-8 flex flex-wrap items-center gap-3"
             {...fade(0.46)}
           >
-            <TelegramCTA />
-            <a href="#how-it-works" className="cta-secondary border-ink-on-dark/55 text-ink-on-dark">
-              See how it works
+            <TelegramCTA label={t.cta.startTrial} />
+            <a
+              href="#how-it-works"
+              className="cta-secondary border-ink-on-dark/55 text-ink-on-dark"
+            >
+              {t.hero.secondaryCta}
             </a>
           </motion.div>
         </div>

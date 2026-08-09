@@ -1,17 +1,12 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
+import type { Dictionary } from "@/i18n/getDictionary";
 
-const filters = [
-  "Year",
-  "Max price",
-  "Damage",
-  "State",
-  "Mileage",
-  "Run condition",
-  "Body type",
-] as const;
+type WatchExplainedProps = {
+  t: Dictionary;
+};
 
-export function WatchExplained() {
+export function WatchExplained({ t }: WatchExplainedProps) {
   return (
     <section
       id="watches"
@@ -23,7 +18,7 @@ export function WatchExplained() {
           <div className="relative aspect-[16/11] overflow-hidden">
             <Image
               src="/images/watch-vehicle-yard.webp"
-              alt="Clean vehicle parked on industrial concrete at an auction yard"
+              alt={t.watches.imageAlt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -33,33 +28,28 @@ export function WatchExplained() {
 
         <Reveal delay={0.1}>
           <p className="font-display text-sm font-medium uppercase tracking-[0.18em] text-steel">
-            Watches
+            {t.watches.eyebrow}
           </p>
           <h2
             id="watch-heading"
             className="mt-3 font-display text-[clamp(1.85rem,4vw,2.75rem)] font-semibold leading-[1.05] tracking-wide uppercase text-charcoal"
           >
-            One make/model rule. Filters included.
+            {t.watches.heading}
           </h2>
           <p className="mt-4 text-[1.05rem] leading-relaxed text-charcoal-soft">
-            A Watch is one make and model you want to track. Optional filters
-            refine matches without using extra Watch slots.
+            {t.watches.body}
           </p>
 
           <ul className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-sm text-charcoal-soft">
-            {filters.map((filter) => (
-              <li
-                key={filter}
-                className="border-b border-[var(--line)] pb-0.5"
-              >
+            {t.watches.filters.map((filter) => (
+              <li key={filter} className="border-b border-[var(--line)] pb-0.5">
                 {filter}
               </li>
             ))}
           </ul>
 
           <p className="mt-8 border-l-2 border-amber pl-4 text-[0.98rem] leading-relaxed text-charcoal-soft">
-            Paused Watches don’t send alerts — and they still occupy a slot
-            until you delete them or renew after expiry.
+            {t.watches.note}
           </p>
         </Reveal>
       </div>

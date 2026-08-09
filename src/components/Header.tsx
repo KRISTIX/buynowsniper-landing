@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
+import { LanguageSelector } from "@/components/LanguageSelector";
+import type { Dictionary } from "@/i18n/getDictionary";
+import type { Locale } from "@/i18n/config";
 
-const links = [
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#faq", label: "FAQ" },
-] as const;
+type HeaderProps = {
+  locale: Locale;
+  t: Dictionary;
+};
 
-export function Header() {
+export function Header({ locale, t }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,6 +21,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const links = [
+    { href: "#how-it-works", label: t.nav.howItWorks },
+    { href: "#pricing", label: t.nav.pricing },
+    { href: "#faq", label: t.nav.faq },
+  ] as const;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 h-16 transition-[background-color,backdrop-filter,border-color] duration-300 ${
@@ -27,12 +35,12 @@ export function Header() {
           : "border-b border-transparent bg-transparent text-ink-on-dark"
       }`}
     >
-      <div className="container-pad flex h-full items-center justify-between gap-4">
+      <div className="container-pad flex h-full items-center justify-between gap-3">
         <a
           href="#top"
           className="font-display text-lg font-semibold tracking-[0.06em] uppercase"
         >
-          Auction Watch
+          {t.brand}
         </a>
 
         <nav
@@ -50,18 +58,25 @@ export function Header() {
           ))}
         </nav>
 
-        <a
-          href={site.telegramUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`text-sm font-semibold transition-colors ${
-            scrolled
-              ? "text-charcoal hover:text-amber"
-              : "text-ink-on-dark hover:text-amber"
-          }`}
-        >
-          Open in Telegram
-        </a>
+        <div className="flex items-center gap-3 sm:gap-4">
+          <LanguageSelector
+            locale={locale}
+            label={t.nav.language}
+            scrolled={scrolled}
+          />
+          <a
+            href={site.telegramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`hidden text-sm font-semibold transition-colors sm:inline ${
+              scrolled
+                ? "text-charcoal hover:text-amber"
+                : "text-ink-on-dark hover:text-amber"
+            }`}
+          >
+            {t.nav.openTelegram}
+          </a>
+        </div>
       </div>
     </header>
   );

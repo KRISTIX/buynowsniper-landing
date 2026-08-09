@@ -1,16 +1,20 @@
 import { site } from "@/lib/site";
+import type { Dictionary } from "@/i18n/getDictionary";
 
-export function Footer() {
+type FooterProps = {
+  t: Dictionary;
+};
+
+export function Footer({ t }: FooterProps) {
   return (
     <footer className="border-t border-[var(--line)] bg-concrete py-10">
       <div className="container-pad flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <div>
           <p className="font-display text-base font-semibold uppercase tracking-[0.08em] text-charcoal">
-            Auction Watch
+            {t.brand}
           </p>
           <p className="mt-2 max-w-sm text-sm leading-relaxed text-steel">
-            Telegram alerts for Copart and IAAI Buy Now matches. Always verify
-            listings on the auction site before you buy.
+            {t.footer.blurb}
           </p>
         </div>
 
@@ -21,7 +25,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="font-medium text-charcoal hover:text-amber"
           >
-            Open bot
+            {t.footer.openBot}
           </a>
           <a
             href={site.appUrl}
@@ -29,7 +33,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="font-medium text-charcoal hover:text-amber"
           >
-            Mini App
+            {t.footer.miniApp}
           </a>
           <a
             href={site.supportTelegram}
@@ -37,17 +41,16 @@ export function Footer() {
             rel="noopener noreferrer"
             className="font-medium text-charcoal hover:text-amber"
           >
-            Contact sales
+            {t.footer.contactSales}
           </a>
           <a href="#pricing" className="font-medium text-charcoal hover:text-amber">
-            Pricing
+            {t.footer.pricing}
           </a>
         </div>
       </div>
       <div className="container-pad mt-8 border-t border-[var(--line)] pt-6">
         <p className="text-xs text-steel">
-          © {new Date().getFullYear()} Auction Watch. Not affiliated with Copart
-          or IAAI.
+          © {new Date().getFullYear()} {t.footer.copyright}
         </p>
       </div>
     </footer>

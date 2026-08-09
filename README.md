@@ -20,7 +20,21 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) — redirects to `/en`.
+
+## Languages
+
+URL-based locales (selector in the header updates the path):
+
+| Path | Language |
+|------|----------|
+| `/en` | English |
+| `/ru` | Russian |
+| `/uk` | Ukrainian |
+| `/lt` | Lithuanian |
+| `/pl` | Polish |
+
+Copy lives in `src/i18n/dictionaries/`.
 
 ## Environment variables
 

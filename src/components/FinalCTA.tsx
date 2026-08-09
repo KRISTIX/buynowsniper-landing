@@ -1,7 +1,12 @@
 import { Reveal } from "@/components/Reveal";
 import { ContactSalesCTA, TelegramCTA } from "@/components/TelegramCTA";
+import type { Dictionary } from "@/i18n/getDictionary";
 
-export function FinalCTA() {
+type FinalCTAProps = {
+  t: Dictionary;
+};
+
+export function FinalCTA({ t }: FinalCTAProps) {
   return (
     <section
       className="relative overflow-hidden border-t border-[var(--line)] bg-charcoal py-20 text-ink-on-dark md:py-28"
@@ -19,21 +24,23 @@ export function FinalCTA() {
       <div className="container-pad relative">
         <Reveal>
           <p className="font-display text-sm font-medium uppercase tracking-[0.18em] text-amber">
-            Free trial
+            {t.finalCta.eyebrow}
           </p>
           <h2
             id="final-cta-heading"
             className="mt-3 max-w-2xl font-display text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-[1.02] tracking-wide uppercase"
           >
-            Start watching Buy Now inventory today
+            {t.finalCta.heading}
           </h2>
           <p className="mt-4 max-w-lg text-[1.05rem] leading-relaxed text-[rgba(244,243,240,0.72)]">
-            Open the bot on Telegram. Your 7-day free trial starts automatically
-            — one Watch, no Stars required to try.
+            {t.finalCta.body}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <TelegramCTA />
-            <ContactSalesCTA className="border-ink-on-dark/45 text-ink-on-dark" />
+            <TelegramCTA label={t.cta.startTrial} />
+            <ContactSalesCTA
+              label={t.cta.contactSales}
+              className="border-ink-on-dark/45 text-ink-on-dark"
+            />
           </div>
         </Reveal>
       </div>
