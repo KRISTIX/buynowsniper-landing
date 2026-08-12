@@ -97,11 +97,11 @@ export type Dictionary = {
 
 export const en: Dictionary = {
   meta: {
-    title: "Auction Watch — Copart & IAAI Buy Now alerts on Telegram",
+    title: "Buy Now Sniper — Copart & IAAI Buy Now alerts on Telegram",
     description:
       "Create vehicle watches for Copart and IAAI. Get a Telegram alert when a matching Buy Now listing appears. Free 3-day trial.",
   },
-  brand: "Auction Watch",
+  brand: "Buy Now Sniper",
   nav: {
     howItWorks: "How it works",
     pricing: "Pricing",
@@ -110,7 +110,7 @@ export const en: Dictionary = {
     language: "Language",
   },
   hero: {
-    ariaLabel: "Auction Watch hero",
+    ariaLabel: "Buy Now Sniper hero",
     headline: "Buy Now alerts for Copart & IAAI — in Telegram",
     sub: "Create a Watch with make, model, years, and max Buy Now price. We monitor Copart and IAAI and message you when a match appears.",
     cta: "Start free trial",
@@ -122,7 +122,7 @@ export const en: Dictionary = {
   support: {
     eyebrow: "What you get",
     heading: "Stop refreshing auction sites. Start a Watch.",
-    body: "Auction Watch monitors Copart and IAAI Buy Now for the cars you care about — and pings you on Telegram when a match appears.",
+    body: "Buy Now Sniper monitors Copart and IAAI Buy Now for the cars you care about — and pings you on Telegram when a match appears.",
     points: [
       {
         title: "Telegram alerts when a match is found",
@@ -153,7 +153,7 @@ export const en: Dictionary = {
     steps: [
       {
         title: "Start the bot",
-        body: "Open Auction Watch on Telegram. Eligible new users get a free 3-day trial with 1 Watch automatically.",
+        body: "Open Buy Now Sniper on Telegram. Eligible new users get a free 3-day trial with 1 Watch automatically.",
       },
       {
         title: "Create a Watch",
@@ -291,6 +291,6 @@ export const en: Dictionary = {
     miniApp: "Mini App",
     contactSales: "Contact sales",
     pricing: "Pricing",
-    copyright: "Auction Watch. Not affiliated with Copart or IAAI.",
+    copyright: "Buy Now Sniper. Not affiliated with Copart or IAAI.",
   },
 };

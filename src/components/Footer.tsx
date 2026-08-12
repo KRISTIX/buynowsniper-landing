@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/lib/site";
 import type { Dictionary } from "@/i18n/getDictionary";
 
@@ -7,13 +8,19 @@ type FooterProps = {
 
 export function Footer({ t }: FooterProps) {
   return (
-    <footer className="border-t border-[var(--line)] bg-concrete py-10">
+    <footer className="border-t border-[var(--line)] bg-white py-10">
       <div className="container-pad flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <div>
-          <p className="font-display text-base font-semibold uppercase tracking-[0.08em] text-charcoal">
-            {t.brand}
-          </p>
-          <p className="mt-2 max-w-sm text-sm leading-relaxed text-steel">
+          <a href="#top" className="inline-flex">
+            <Image
+              src="/brand/logo-wordmark.webp"
+              alt={t.brand}
+              width={640}
+              height={120}
+              className="h-10 w-auto object-contain object-left"
+            />
+          </a>
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-steel">
             {t.footer.blurb}
           </p>
         </div>

@@ -2,11 +2,11 @@ import type { Dictionary } from "./en";
 
 export const uk: Dictionary = {
   meta: {
-    title: "Auction Watch — сповіщення Copart і IAAI Buy Now в Telegram",
+    title: "Buy Now Sniper — сповіщення Copart і IAAI Buy Now в Telegram",
     description:
       "Створюйте Watch для Copart і IAAI. Отримуйте сповіщення в Telegram, коли з’являється відповідний Buy Now. Безкоштовний пробний період 3 дні.",
   },
-  brand: "Auction Watch",
+  brand: "Buy Now Sniper",
   nav: {
     howItWorks: "Як це працює",
     pricing: "Ціни",
@@ -15,7 +15,7 @@ export const uk: Dictionary = {
     language: "Мова",
   },
   hero: {
-    ariaLabel: "Auction Watch — головний екран",
+    ariaLabel: "Buy Now Sniper — головний екран",
     headline: "Сповіщення Buy Now по Copart і IAAI — в Telegram",
     sub: "Створіть Watch: марка, модель, роки та макс. ціна Buy Now. Ми стежимо за Copart і IAAI й пишемо вам, коли з’являється збіг.",
     cta: "Почати пробний період",
@@ -26,7 +26,7 @@ export const uk: Dictionary = {
   support: {
     eyebrow: "Що ви отримуєте",
     heading: "Досить оновлювати аукціони. Створіть Watch.",
-    body: "Auction Watch стежить за Buy Now на Copart і IAAI за потрібними вам авто — і пише в Telegram, коли з’являється збіг.",
+    body: "Buy Now Sniper стежить за Buy Now на Copart і IAAI за потрібними вам авто — і пише в Telegram, коли з’являється збіг.",
     points: [
       {
         title: "Сповіщення в Telegram при збігу",
@@ -57,7 +57,7 @@ export const uk: Dictionary = {
     steps: [
       {
         title: "Запустіть бота",
-        body: "Відкрийте Auction Watch у Telegram. Новим користувачам — безкоштовний пробний період 3 дні та 1 Watch.",
+        body: "Відкрийте Buy Now Sniper у Telegram. Новим користувачам — безкоштовний пробний період 3 дні та 1 Watch.",
       },
       {
         title: "Створіть Watch",
@@ -194,6 +194,6 @@ export const uk: Dictionary = {
     miniApp: "Mini App",
     contactSales: "Зв’язатися з продажами",
     pricing: "Ціни",
-    copyright: "Auction Watch. Не афілійований з Copart або IAAI.",
+    copyright: "Buy Now Sniper. Не афілійований з Copart або IAAI.",
   },
 };

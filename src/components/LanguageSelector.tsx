@@ -6,14 +6,9 @@ import { localeLabels, locales, type Locale } from "@/i18n/config";
 type LanguageSelectorProps = {
   locale: Locale;
   label: string;
-  scrolled?: boolean;
 };
 
-export function LanguageSelector({
-  locale,
-  label,
-  scrolled = false,
-}: LanguageSelectorProps) {
+export function LanguageSelector({ locale, label }: LanguageSelectorProps) {
   const router = useRouter();
 
   return (
@@ -25,11 +20,7 @@ export function LanguageSelector({
         onChange={(event) => {
           router.push(`/${event.target.value}`);
         }}
-        className={`appearance-none cursor-pointer rounded-none border bg-transparent py-1.5 pl-2 pr-7 text-sm font-medium outline-none transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
-          scrolled
-            ? "border-[var(--line)] text-charcoal focus-visible:outline-charcoal"
-            : "border-white/25 text-ink-on-dark focus-visible:outline-ink-on-dark"
-        }`}
+        className="appearance-none cursor-pointer rounded-none border border-[var(--line)] bg-transparent py-1.5 pl-2 pr-7 text-sm font-medium text-charcoal outline-none transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charcoal"
       >
         {locales.map((code) => (
           <option key={code} value={code} className="text-charcoal">
@@ -38,9 +29,7 @@ export function LanguageSelector({
         ))}
       </select>
       <span
-        className={`pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[0.65rem] ${
-          scrolled ? "text-steel" : "text-ink-on-dark/70"
-        }`}
+        className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[0.65rem] text-steel"
         aria-hidden
       >
         ▾

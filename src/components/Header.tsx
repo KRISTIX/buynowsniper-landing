@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import type { Dictionary } from "@/i18n/getDictionary";
@@ -12,15 +12,6 @@ type HeaderProps = {
 };
 
 export function Header({ locale, t }: HeaderProps) {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   const links = [
     { href: "#how-it-works", label: t.nav.howItWorks },
     { href: "#pricing", label: t.nav.pricing },
@@ -28,19 +19,17 @@ export function Header({ locale, t }: HeaderProps) {
   ] as const;
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 h-16 transition-[background-color,backdrop-filter,border-color] duration-300 ${
-        scrolled
-          ? "border-b border-[var(--line)] bg-[rgba(236,236,235,0.92)] backdrop-blur-md text-charcoal"
-          : "border-b border-transparent bg-transparent text-ink-on-dark"
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-[var(--line)] bg-white text-charcoal">
       <div className="container-pad flex h-full items-center justify-between gap-3">
-        <a
-          href="#top"
-          className="font-display text-lg font-semibold tracking-[0.06em] uppercase"
-        >
-          {t.brand}
+        <a href="#top" className="relative flex h-9 w-[min(11.5rem,42vw)] shrink-0 items-center">
+          <Image
+            src="/brand/logo-wordmark.webp"
+            alt={t.brand}
+            width={640}
+            height={120}
+            priority
+            className="h-9 w-auto object-contain object-left"
+          />
         </a>
 
         <nav
@@ -51,7 +40,7 @@ export function Header({ locale, t }: HeaderProps) {
             <a
               key={link.href}
               href={link.href}
-              className="opacity-85 transition-opacity hover:opacity-100"
+              className="text-charcoal-soft transition-colors hover:text-charcoal"
             >
               {link.label}
             </a>
@@ -59,20 +48,12 @@ export function Header({ locale, t }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
-          <LanguageSelector
-            locale={locale}
-            label={t.nav.language}
-            scrolled={scrolled}
-          />
+          <LanguageSelector locale={locale} label={t.nav.language} />
           <a
             href={site.telegramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`hidden text-sm font-semibold transition-colors sm:inline ${
-              scrolled
-                ? "text-charcoal hover:text-amber"
-                : "text-ink-on-dark hover:text-amber"
-            }`}
+            className="hidden text-sm font-semibold text-charcoal transition-colors hover:text-amber sm:inline"
           >
             {t.nav.openTelegram}
           </a>

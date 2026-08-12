@@ -7,7 +7,7 @@ const supportUsername =
   "buynowsniper_supportbot";
 
 export const site = {
-  name: "Auction Watch",
+  name: "Buy Now Sniper",
   description:
     "Create vehicle watches for Copart and IAAI. Get a Telegram alert when a matching Buy Now listing appears. Free 3-day trial.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://buynowsniper-landing.vercel.app",
