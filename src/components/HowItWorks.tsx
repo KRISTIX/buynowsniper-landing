@@ -1,14 +1,8 @@
-import {
-  Bot,
-  Eye,
-  MessageSquare,
-  RefreshCw,
-  ExternalLink,
-} from "lucide-react";
+import { Bot, Eye, MessageSquare, ExternalLink } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/getDictionary";
 
-const icons = [Bot, Eye, RefreshCw, MessageSquare, ExternalLink] as const;
+const icons = [Bot, Eye, MessageSquare, ExternalLink] as const;
 
 type HowItWorksProps = {
   t: Dictionary;
@@ -34,13 +28,13 @@ export function HowItWorks({ t }: HowItWorksProps) {
           </h2>
         </Reveal>
 
-        <ol className="mt-14 grid gap-0 sm:grid-cols-2 lg:grid-cols-5">
+        <ol className="mt-14 grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
           {t.howItWorks.steps.map(({ title, body }, index) => {
             const Icon = icons[index] ?? Bot;
             return (
               <li
                 key={title}
-                className="relative border-t border-[var(--line)] py-8 pr-4 sm:border-t-0 sm:border-l sm:pl-5 sm:first:border-l-0 sm:first:pl-0 lg:min-h-[14rem]"
+                className="relative border-t border-[var(--line)] py-8 pr-5 sm:border-t-0 sm:border-l sm:pl-6 sm:first:border-l-0 sm:first:pl-0 lg:min-h-[13rem]"
               >
                 <Reveal delay={index * 0.06}>
                   <span className="font-display text-sm font-medium tracking-wider text-amber">

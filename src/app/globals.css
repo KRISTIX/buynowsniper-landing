@@ -173,12 +173,18 @@ body {
 }
 
 .plan-card--featured {
-  border-color: var(--amber);
-  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(201, 146, 42, 0.45);
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .plan-card--featured:hover {
-  border-color: var(--amber-hover);
+  border-color: var(--amber);
+}
+
+.plan-card--popular {
+  border-color: var(--amber);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 1px 0 rgba(201, 146, 42, 0.25);
 }
 
 .alert-mock {

@@ -1,3 +1,4 @@
+import { CreditCard } from "lucide-react";
 import { planWatches, site } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 import { ContactSalesCTA, TelegramCTA } from "@/components/TelegramCTA";
@@ -16,7 +17,7 @@ export function Pricing({ t }: PricingProps) {
     >
       <div className="container-pad">
         <Reveal>
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-xl">
               <p className="font-display text-sm font-medium uppercase tracking-[0.18em] text-steel">
                 {t.pricing.eyebrow}
@@ -30,8 +31,12 @@ export function Pricing({ t }: PricingProps) {
               <p className="mt-4 text-[1.05rem] leading-relaxed text-charcoal-soft">
                 {t.pricing.body}
               </p>
+              <p className="mt-3 inline-flex items-start gap-2 text-sm text-steel">
+                <CreditCard className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.75} aria-hidden />
+                <span>{t.pricing.paymentsNote}</span>
+              </p>
             </div>
-            <div className="flex flex-wrap gap-3 self-start md:self-auto">
+            <div className="flex flex-wrap gap-3 self-start lg:self-auto">
               <TelegramCTA label={t.cta.startTrial} />
               <ContactSalesCTA
                 label={t.cta.contactSales}
@@ -41,14 +46,19 @@ export function Pricing({ t }: PricingProps) {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {t.pricing.plans.map((plan, index) => {
+            const featured = plan.id === "monthly";
             const highlight = plan.id === "monthly" || plan.id === "quarterly";
             return (
               <Reveal key={plan.id} delay={index * 0.05}>
                 <article
                   className={`plan-card h-full ${
-                    highlight ? "plan-card--featured" : ""
+                    featured
+                      ? "plan-card--featured plan-card--popular"
+                      : highlight
+                        ? "plan-card--featured"
+                        : ""
                   }`}
                 >
                   <div className="flex items-start justify-between gap-3">
@@ -56,18 +66,26 @@ export function Pricing({ t }: PricingProps) {
                       {plan.name}
                     </h3>
                     {plan.badge ? (
-                      <span className="shrink-0 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-amber">
+                      <span className="shrink-0 rounded-sm bg-amber/15 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-amber">
                         {plan.badge}
                       </span>
                     ) : null}
                   </div>
 
-                  <p className="font-display text-[2rem] font-semibold leading-none tracking-wide text-charcoal">
-                    {plan.price}
-                  </p>
-                  <p className="text-sm text-steel">{plan.priceNote}</p>
+                  <div>
+                    <p className="font-display text-[2.15rem] font-semibold leading-none tracking-wide text-charcoal">
+                      {plan.price}
+                    </p>
+                    {plan.perDay ? (
+                      <p className="mt-2 text-sm text-steel">
+                        {plan.perDay}{" "}
+                        <span className="opacity-80">{t.pricing.perDayLabel}</span>
+                      </p>
+                    ) : null}
+                    <p className="mt-1 text-sm text-charcoal-soft">{plan.priceNote}</p>
+                  </div>
 
-                  <dl className="mt-auto space-y-2 border-t border-[var(--line)] pt-4 text-sm">
+                  <dl className="mt-auto space-y-2.5 border-t border-[var(--line)] pt-4 text-sm">
                     <div className="flex justify-between gap-3">
                       <dt className="text-steel">{t.pricing.watchesLabel}</dt>
                       <dd className="font-semibold text-charcoal">
@@ -84,8 +102,8 @@ export function Pricing({ t }: PricingProps) {
                     href={site.telegramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`mt-2 inline-flex min-h-11 items-center justify-center text-sm font-semibold transition-colors ${
-                      highlight
+                    className={`mt-1 inline-flex min-h-11 items-center justify-center text-sm font-semibold transition-colors ${
+                      featured
                         ? "bg-amber text-charcoal hover:bg-amber-hover"
                         : "border border-[var(--line)] text-charcoal hover:border-charcoal/40"
                     }`}
@@ -99,7 +117,7 @@ export function Pricing({ t }: PricingProps) {
         </div>
 
         <Reveal delay={0.12}>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mt-10 flex flex-col gap-4 border-t border-[var(--line)] pt-8 sm:flex-row sm:items-end sm:justify-between">
             <p className="max-w-2xl text-sm leading-relaxed text-steel">
               {t.pricing.disclaimer}
             </p>

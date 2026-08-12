@@ -8,7 +8,7 @@ type LinkCTAProps = {
 
 export function TelegramCTA({
   className = "",
-  label = "Start free 7-day trial",
+  label = "Start free trial",
   secondary = false,
 }: LinkCTAProps) {
   return (

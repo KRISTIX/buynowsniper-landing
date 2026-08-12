@@ -1,8 +1,8 @@
-# Buy Now Sniper — Marketing Landing
+# Auction Watch — Marketing Landing
 
-Standalone marketing site for **Buy Now Sniper**, a Telegram bot + Mini App that monitors Copart and IAAI Buy Now inventory and sends Telegram alerts when your Watches match.
+Standalone marketing site for **Auction Watch** (Telegram-facing nickname: Buy Now Sniper — alerts only, no bidding), a Telegram bot + Mini App that monitors Copart and IAAI Buy Now inventory.
 
-This repo is the public landing page only — not the product Mini App.
+Canonical product facts: [`.agents/product-marketing.md`](.agents/product-marketing.md).
 
 ## Stack
 
@@ -24,8 +24,6 @@ Open [http://localhost:3000](http://localhost:3000) — redirects to `/en`.
 
 ## Languages
 
-URL-based locales (selector in the header updates the path):
-
 | Path | Language |
 |------|----------|
 | `/en` | English |
@@ -40,25 +38,20 @@ Copy lives in `src/i18n/dictionaries/`.
 
 | Variable | Required | Purpose |
 |----------|----------|---------|
-| `NEXT_PUBLIC_TELEGRAM_BOT_USERNAME` | Recommended | Bot username (no `@`). Primary CTAs use `https://t.me/<username>`. Defaults to `buynowsniperbot`. |
-| `NEXT_PUBLIC_TELEGRAM_SUPPORT_USERNAME` | Recommended | Support/sales bot (no `@`). Contact sales CTAs use `https://t.me/<username>`. Defaults to `buynowsniper_supportbot`. |
-| `NEXT_PUBLIC_SITE_URL` | Recommended for production | Canonical URL for metadata / Open Graph (e.g. `https://your-domain.vercel.app`). |
+| `NEXT_PUBLIC_TELEGRAM_BOT_USERNAME` | Recommended | Bot username (no `@`). Defaults to `buynowsniperbot`. |
+| `NEXT_PUBLIC_TELEGRAM_SUPPORT_USERNAME` | Recommended | Support/sales bot. Defaults to `buynowsniper_supportbot`. |
+| `NEXT_PUBLIC_SITE_URL` | Recommended for production | Canonical URL for metadata / Open Graph. |
 
-Example `.env.local`:
+## Pricing (current)
 
-```bash
-NEXT_PUBLIC_TELEGRAM_BOT_USERNAME=buynowsniperbot
-NEXT_PUBLIC_TELEGRAM_SUPPORT_USERNAME=buynowsniper_supportbot
-NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
-```
+| Plan | Watches | Period | Price |
+|------|---------|--------|-------|
+| Free Trial | 1 | 3 days | Free |
+| Weekly | 5 | 7 days | €45 |
+| Monthly | 10 | 30 days | €89 |
+| 3-Month | 15 | 90 days | €179 |
 
-## Deploy on Vercel
-
-1. Import this repo in Vercel.
-2. Set the env vars above for Production (and Preview if useful).
-3. Deploy. Framework preset: Next.js.
-
-Optional: install the Vercel CLI (`npm i -g vercel`) for local `vercel env pull` / deploys.
+Stripe in Mini App (Apple Pay / Google Pay / card). EUR subscription; Buy Now max-price filters in USD.
 
 ## Product links
 
@@ -68,19 +61,16 @@ Optional: install the Vercel CLI (`npm i -g vercel`) for local `vercel env pull`
 
 ## Marketing gaps (do not invent into UI)
 
-Still open for future content — deliberately omitted from the page:
-
-- Voice-of-customer / target buyer language from interviews
-- Competitor comparison (names, feature matrix)
-- Testimonials or case studies with attribution
-- Stars → USD conversion (rates vary; not published here)
-- Volume metrics (alerts sent, users, win rates)
+- Voice-of-customer / testimonials
+- Competitor comparison
+- Volume metrics
+- Live promo/coupon codes (market only if ops enables them)
 
 ## Scripts
 
 ```bash
-npm run dev      # local development
-npm run build    # production build
-npm run start    # serve production build
-npm run lint     # ESLint
+npm run dev
+npm run build
+npm run start
+npm run lint
 ```

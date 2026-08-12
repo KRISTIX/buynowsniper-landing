@@ -37,6 +37,9 @@ export function FinalCTA({ t }: FinalCTAProps) {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <TelegramCTA label={t.cta.startTrial} />
+            <a href="#pricing" className="cta-secondary border-ink-on-dark/45 text-ink-on-dark">
+              {t.nav.pricing}
+            </a>
             <ContactSalesCTA
               label={t.cta.contactSales}
               className="border-ink-on-dark/45 text-ink-on-dark"

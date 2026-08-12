@@ -51,26 +51,33 @@ export function Hero({ t }: HeroProps) {
       </div>
 
       <div className="container-pad flex min-h-[100svh] flex-col justify-end pb-16 pt-[calc(var(--header-h)+2.5rem)] md:justify-center md:pb-24 md:pt-28">
-        <div className="max-w-[34rem]">
+        <div className="max-w-[36rem]">
           <motion.p
-            className="font-display text-[clamp(2.75rem,8vw,5.25rem)] font-semibold leading-[0.92] tracking-[0.04em] uppercase"
+            className="font-display text-[clamp(2.5rem,7.5vw,4.75rem)] font-semibold leading-[0.92] tracking-[0.04em] uppercase"
             {...fade(0.08)}
           >
             {t.brand}
           </motion.p>
 
           <motion.h1
-            className="mt-5 max-w-[28rem] text-[clamp(1.2rem,2.4vw,1.55rem)] font-medium leading-snug text-[rgba(244,243,240,0.92)]"
+            className="mt-5 max-w-[30rem] text-[clamp(1.25rem,2.5vw,1.65rem)] font-medium leading-snug text-[rgba(244,243,240,0.94)]"
             {...fade(0.22)}
           >
             {t.hero.headline}
           </motion.h1>
 
           <motion.p
-            className="mt-4 max-w-[28rem] text-[0.98rem] leading-relaxed text-[rgba(244,243,240,0.72)]"
+            className="mt-4 max-w-[30rem] text-[1rem] leading-relaxed text-[rgba(244,243,240,0.74)]"
             {...fade(0.34)}
           >
             {t.hero.sub}
+          </motion.p>
+
+          <motion.p
+            className="mt-3 text-sm text-[rgba(244,243,240,0.55)]"
+            {...fade(0.4)}
+          >
+            {t.hero.honesty}
           </motion.p>
 
           <motion.div

@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Bell, Filter, MapPin } from "lucide-react";
+import { Bell, Layers, ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/getDictionary";
 
-const icons = [Bell, Filter, MapPin] as const;
+const icons = [Bell, Layers, ShieldCheck] as const;
 
 type SupportProps = {
   t: Dictionary;
@@ -71,13 +71,22 @@ export function Support({ t }: SupportProps) {
                 aria-hidden
               />
               <div className="absolute inset-x-5 bottom-5 sm:inset-x-8 sm:bottom-8">
-                <div className="alert-mock max-w-[17rem]" aria-hidden>
-                  <div className="alert-mock__brand">{t.brand}</div>
-                  <p className="font-medium">2018 Ford F-150 · Buy Now</p>
-                  <p className="mt-1 opacity-80">
-                    {"$8,400"} · Front end · TX · 94k mi
-                  </p>
-                  <p className="mt-2 text-[0.72rem] opacity-65">
+                <div className="alert-mock max-w-[18rem]" aria-hidden>
+                  <div className="mb-2 flex items-center justify-between gap-2">
+                    <div className="alert-mock__brand">{t.brand}</div>
+                    <span className="text-[0.62rem] uppercase tracking-wider opacity-50">
+                      {t.support.alertExampleLabel}
+                    </span>
+                  </div>
+                  <p className="font-semibold text-[0.85rem]">{t.support.alertTitle}</p>
+                  <p className="mt-1.5 font-medium">{t.support.alertVehicle}</p>
+                  <ul className="mt-2 space-y-0.5 opacity-85">
+                    <li>{t.support.alertPrice}</li>
+                    <li>{t.support.alertSource}</li>
+                    <li>{t.support.alertDamage}</li>
+                    <li>{t.support.alertLocation}</li>
+                  </ul>
+                  <p className="mt-2.5 text-[0.72rem] font-medium text-[var(--amber)]">
                     {t.support.alertOpenListing}
                   </p>
                 </div>

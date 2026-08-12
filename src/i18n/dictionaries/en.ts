@@ -17,6 +17,7 @@ export type Dictionary = {
     sub: string;
     cta: string;
     secondaryCta: string;
+    honesty: string;
     imageAlt: string;
   };
   support: {
@@ -25,6 +26,13 @@ export type Dictionary = {
     body: string;
     points: { title: string; body: string }[];
     imageAlt: string;
+    alertExampleLabel: string;
+    alertTitle: string;
+    alertVehicle: string;
+    alertPrice: string;
+    alertSource: string;
+    alertDamage: string;
+    alertLocation: string;
     alertOpenListing: string;
   };
   howItWorks: {
@@ -44,8 +52,10 @@ export type Dictionary = {
     eyebrow: string;
     heading: string;
     body: string;
+    paymentsNote: string;
     watchesLabel: string;
     durationLabel: string;
+    perDayLabel: string;
     trialCta: string;
     planCta: string;
     disclaimer: string;
@@ -55,6 +65,7 @@ export type Dictionary = {
       duration: string;
       price: string;
       priceNote: string;
+      perDay: string | null;
       badge: string | null;
     }[];
   };
@@ -86,11 +97,11 @@ export type Dictionary = {
 
 export const en: Dictionary = {
   meta: {
-    title: "Buy Now Sniper — Copart & IAAI Buy Now alerts on Telegram",
+    title: "Auction Watch — Copart & IAAI Buy Now alerts on Telegram",
     description:
-      "Telegram alerts when Copart and IAAI Buy Now listings match your Watches. Free 7-day trial.",
+      "Create vehicle watches for Copart and IAAI. Get a Telegram alert when a matching Buy Now listing appears. Free 3-day trial.",
   },
-  brand: "Buy Now Sniper",
+  brand: "Auction Watch",
   nav: {
     howItWorks: "How it works",
     pricing: "Pricing",
@@ -99,119 +110,131 @@ export const en: Dictionary = {
     language: "Language",
   },
   hero: {
-    ariaLabel: "Buy Now Sniper hero",
-    headline: "Telegram alerts when Copart & IAAI Buy Now matches appear",
-    sub: "Create a Watch. Get price, damage, location, and a listing link — checked about every 15 minutes.",
-    cta: "Start free 7-day trial",
+    ariaLabel: "Auction Watch hero",
+    headline: "Buy Now alerts for Copart & IAAI — in Telegram",
+    sub: "Create a Watch with make, model, years, and max Buy Now price. We monitor Copart and IAAI and message you when a match appears.",
+    cta: "Start free trial",
     secondaryCta: "See how it works",
+    honesty: "Alerts only — we don’t bid or buy for you.",
     imageAlt:
       "Salvage auction lot at dusk with wet asphalt and sodium yard lights",
   },
   support: {
     eyebrow: "What you get",
-    heading: "Stop refreshing yards. Start getting matches.",
-    body: "Buy Now Sniper monitors Copart and IAAI Buy Now inventory for your rules and pushes matches to Telegram.",
+    heading: "Stop refreshing auction sites. Start a Watch.",
+    body: "Auction Watch monitors Copart and IAAI Buy Now for the cars you care about — and pings you on Telegram when a match appears.",
     points: [
       {
-        title: "Telegram alerts for Buy Now",
-        body: "When a matching Copart or IAAI Buy Now listing appears, you get a message with the details that matter.",
+        title: "Telegram alerts when a match is found",
+        body: "Price, damage, location, and an open-listing link — so you can act without babysitting the site.",
       },
       {
-        title: "Watches you control",
-        body: "Set make and model, then add year, max price, damage, state, mileage, and more — filters don’t use extra slots.",
+        title: "Copart + IAAI in one place",
+        body: "One Watch can cover Copart, IAAI, or both. Filters for years, max Buy Now (USD), damage, state, and more.",
       },
       {
-        title: "You buy on the auction site",
-        body: "Buy Now Sniper notifies. You open the listing on Copart or IAAI and decide. No auto-bid.",
+        title: "You decide. You buy on the auction site.",
+        body: "Monitoring and alerts only. No auto-bid, no auto-buy, no auction-account login required.",
       },
     ],
     imageAlt: "Hands holding a phone at a night auction lot",
-    alertOpenListing: "Open listing on Copart",
+    alertExampleLabel: "Example alert",
+    alertTitle: "Buy Now found",
+    alertVehicle: "2018 Toyota Camry SE",
+    alertPrice: "$4,250",
+    alertSource: "Copart",
+    alertDamage: "Front End",
+    alertLocation: "TX",
+    alertOpenListing: "Open listing",
   },
   howItWorks: {
     eyebrow: "How it works",
-    heading: "From bot to Buy Now in five steps",
+    heading: "Watch → alert → open listing",
     steps: [
       {
         title: "Start the bot",
-        body: "Open Buy Now Sniper on Telegram. Your free 7-day trial begins automatically.",
+        body: "Open Auction Watch on Telegram. Eligible new users get a free 3-day trial with 1 Watch automatically.",
       },
       {
         title: "Create a Watch",
-        body: "Pick a make and model in the Mini App. Add optional filters if you want tighter matches.",
-      },
-      {
-        title: "We check the yards",
-        body: "The system scans Copart and IAAI Buy Now inventory about every 15 minutes.",
+        body: "In the Mini App: pick source, make/model, years, and max Buy Now price (USD). Activate.",
       },
       {
         title: "Get a Telegram alert",
-        body: "A match includes price, damage, location, and a link to the listing.",
+        body: "We check periodically on a minutes-scale schedule. Matching Buy Now → concise alert with a listing link.",
       },
       {
-        title: "Buy on Copart or IAAI",
-        body: "You open the auction site yourself and complete the purchase there.",
+        title: "Verify and buy yourself",
+        body: "Open the listing on Copart or IAAI. Always verify price and details before you buy.",
       },
     ],
   },
   watches: {
     eyebrow: "Watches",
     heading: "One make/model rule. Filters included.",
-    body: "A Watch is one make and model you want to track. Optional filters refine matches without using extra Watch slots.",
+    body: "A Watch uses one plan slot. Optional filters refine matches without costing extra slots.",
     filters: [
-      "Year",
-      "Max price",
+      "Source (Copart / IAAI / both)",
+      "Make / model",
+      "Year range",
+      "Max Buy Now (USD)",
       "Damage",
-      "State",
+      "US state",
       "Mileage",
       "Run condition",
       "Body type",
     ],
-    note: "Paused Watches don’t send alerts — and they still occupy a slot until you delete them or renew after expiry.",
+    note: "Paused Watches don’t alert — and still occupy a slot. Resume does not backfill old listings. On trial or plan expiry, Watches pause until you upgrade or renew.",
     imageAlt:
       "Clean vehicle parked on industrial concrete at an auction yard",
   },
   pricing: {
     eyebrow: "Pricing",
-    heading: "Telegram Stars only",
-    body: "Pay in-app with Stars. Paid plans activate immediately. Unused time is not prorated.",
-    watchesLabel: "Watches",
-    durationLabel: "Duration",
+    heading: "Clear EUR plans. Pay with card.",
+    body: "Stripe checkout in the Mini App — Apple Pay, Google Pay, or card. Subscriptions renew until you cancel.",
+    paymentsNote: "Billed in EUR · Buy Now max-price filters stay in USD to match auction listings",
+    watchesLabel: "Car watches",
+    durationLabel: "Period",
+    perDayLabel: "≈ per day",
     trialCta: "Start free trial",
     planCta: "Open in Telegram",
     disclaimer:
-      "On expiry, Watches pause until you renew. Buy Now availability changes fast — always verify price and details on Copart or IAAI before you buy. Need more Watches or a custom plan? Contact sales.",
+      "Paid plan activates after successful payment. Cancel renewal anytime — access continues until the period ends. Downgrades are not prorated. On expiry, Watches pause until you renew. Buy Now inventory moves fast — always verify on Copart or IAAI. Need a custom plan? Contact sales.",
     plans: [
       {
         id: "trial",
         name: "Free Trial",
-        duration: "7 days",
+        duration: "3 days",
         price: "Free",
-        priceNote: "Once per user",
+        priceNote: "1 watch · once per user",
+        perDay: null,
         badge: null,
       },
       {
         id: "weekly",
         name: "Weekly",
         duration: "7 days",
-        price: "2,500 ⭐",
-        priceNote: "Telegram Stars",
+        price: "€45",
+        priceNote: "Short hunt / try paid",
+        perDay: "~€6.43",
         badge: null,
       },
       {
         id: "monthly",
         name: "Monthly",
         duration: "30 days",
-        price: "5,000 ⭐",
-        priceNote: "Telegram Stars",
-        badge: "Popular",
+        price: "€89",
+        priceNote: "Best everyday balance",
+        perDay: "~€2.97",
+        badge: "Most popular",
       },
       {
         id: "quarterly",
         name: "3-Month",
         duration: "90 days",
-        price: "10,000 ⭐",
-        priceNote: "Telegram Stars",
+        price: "€179",
+        priceNote: "Lowest daily cost",
+        perDay: "~€1.99",
         badge: "Best value",
       },
     ],
@@ -222,48 +245,52 @@ export const en: Dictionary = {
     items: [
       {
         q: "How do I pay?",
-        a: "Payment is Telegram Stars only — no card checkout in the app. Buy Stars in Telegram, then purchase a plan inside Buy Now Sniper.",
+        a: "Stripe in the Mini App — Apple Pay, Google Pay, or card, billed in EUR. Manage payment method or cancel renewal via the in-app Stripe Customer Portal.",
       },
       {
-        q: "How often do you check inventory?",
-        a: "About every 15 minutes. This is not real-time or instant. Listings can appear and sell between checks.",
+        q: "Is this real-time?",
+        a: "No. We check periodically on a minutes-scale schedule — not millisecond scraping. Listings can appear and sell between checks. Always verify on the auction page.",
       },
       {
-        q: "Does Buy Now Sniper bid or buy for me?",
-        a: "No. You get an alert with listing details and a link. You open Copart or IAAI and buy yourself. There is no auto-bid and no auto-buy.",
+        q: "Do you bid or buy for me?",
+        a: "No. Alerts only. You open Copart or IAAI and buy yourself. There is no auto-bid and no auto-buy.",
       },
       {
-        q: "What happens when my plan expires?",
-        a: "Your Watches pause and stop alerting until you renew. Paused Watches still occupy slots.",
+        q: "What happens after the free trial?",
+        a: "The trial is 1 Watch for 3 days. When it ends, Watches pause until you subscribe. Upgrade anytime in the Mini App.",
       },
       {
-        q: "Can I trust the listing details in an alert?",
-        a: "Treat alerts as a heads-up. Always verify price, damage, location, and availability on the auction site before you buy — inventory moves quickly.",
+        q: "Why EUR pricing for USD cars?",
+        a: "Your subscription is billed in EUR via Stripe. Max Buy Now price filters stay in USD to match Copart and IAAI listings.",
       },
       {
-        q: "Need help or custom pricing?",
-        a: "Message our support bot on Telegram for help, custom plans, and sales.",
+        q: "Can I cancel?",
+        a: "Yes. Cancel auto-renew in the app / Stripe portal. Access continues until the current period ends.",
+      },
+      {
+        q: "Need help?",
+        a: "Message our support bot on Telegram for help, payment questions, and custom plans.",
       },
     ],
     helpLinkPrefix: "Message",
-    helpLinkSuffix: "on Telegram for support, custom pricing, and sales.",
+    helpLinkSuffix: "on Telegram for support, payment help, and sales.",
   },
   finalCta: {
     eyebrow: "Free trial",
-    heading: "Start watching Buy Now inventory today",
-    body: "Open the bot on Telegram. Your 7-day free trial starts automatically — one Watch, no Stars required to try.",
+    heading: "Start free — 1 car watch for 3 days",
+    body: "Open the bot on Telegram. Create your first Watch. Upgrade anytime with Apple Pay, Google Pay, or card to keep monitoring.",
   },
   cta: {
-    startTrial: "Start free 7-day trial",
+    startTrial: "Start free trial",
     contactSales: "Contact sales",
   },
   footer: {
     blurb:
-      "Telegram alerts for Copart and IAAI Buy Now matches. Always verify listings on the auction site before you buy.",
+      "Buy Now alerts for Copart and IAAI — in Telegram. Alerts only; always verify listings on the auction site before you buy.",
     openBot: "Open bot",
     miniApp: "Mini App",
     contactSales: "Contact sales",
     pricing: "Pricing",
-    copyright: "Buy Now Sniper. Not affiliated with Copart or IAAI.",
+    copyright: "Auction Watch. Not affiliated with Copart or IAAI.",
   },
 };
