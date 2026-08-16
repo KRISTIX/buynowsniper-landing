@@ -1,6 +1,6 @@
 # Buy Now Sniper — Marketing Landing
 
-Standalone marketing site for **Buy Now Sniper**, a Telegram bot + Mini App that monitors Copart and IAAI Buy Now inventory.
+Standalone marketing site for **Buy Now Sniper**, a Telegram bot + Mini App that monitors Copart and IAAI for Buy Now and live auction matches.
 
 Canonical product facts: [`.agents/product-marketing.md`](.agents/product-marketing.md).
 
@@ -49,12 +49,12 @@ Copy lives in `src/i18n/dictionaries/`.
 
 | Plan | Watches | Period | Price |
 |------|---------|--------|-------|
-| Free Trial | 1 | 3 days | Free |
+| Free Trial | 1 | 5 days | Free |
 | Weekly | 5 | 7 days | €45 |
 | Monthly | 10 | 30 days | €89 |
 | 3-Month | 15 | 90 days | €179 |
 
-Stripe in Mini App (Apple Pay / Google Pay / card). EUR subscription; Buy Now max-price filters in USD.
+Stripe in Mini App (Apple Pay / Google Pay / card). EUR subscription; max-price filters in USD. Covers Buy Now and live auctions.
 
 ## Product links
 

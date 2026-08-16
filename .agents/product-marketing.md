@@ -17,7 +17,7 @@
 
 **Product type:** B2C SaaS subscription with free trial
 
-**Business model:** Freemium → paid Stripe subscriptions (EUR). Free trial (1 watch / 3 days). Paid SKUs: Weekly, Monthly, 3-Month. Checkout in Mini App via Stripe Payment Element (Apple Pay / Google Pay / card). Customer Portal for payment method / cancel.
+**Business model:** Freemium → paid Stripe subscriptions (EUR). Free trial (1 watch / 5 days). Paid SKUs: Weekly, Monthly, 3-Month. Checkout in Mini App via Stripe Payment Element (Apple Pay / Google Pay / card). Customer Portal for payment method / cancel.
 
 **Brand names:**
 | Surface | Name |
@@ -106,7 +106,7 @@
 
 **How we do it differently:** Narrow make/model provider queries + local matching against user filters; alert only on **new** Buy Now or **Buy Now activated**.
 
-**Why that’s better:** Personalized alerts, less noise, low friction to start (3-day trial → Stripe upgrade).
+**Why that’s better:** Personalized alerts, less noise, low friction to start (5-day trial → Stripe upgrade).
 
 **Why customers choose us:** Telegram-native, Buy Now focused, simple watch → alert loop, honest about polling (not fake “instant sniping”).
 
@@ -131,7 +131,7 @@
 
 **Push:** Tired of refreshing Copart/IAAI; missed Buy Now deals; spammy auction groups.
 
-**Pull:** Telegram alert with price, damage, location, open-listing link; free 3-day trial; card/Apple Pay checkout.
+**Pull:** Telegram alert with price, damage, location, open-listing link; free 5-day trial; card/Apple Pay checkout.
 
 **Habit:** Manual site checks; relying on friends/groups.
 
@@ -171,7 +171,7 @@
 | Watch slot | Capacity unit on a plan; optional filters do not cost extra slots |
 | Buy Now | Fixed-price auction inventory (not live bidding) |
 | Baseline | First successful scrape for a search — existing lots are not alerted |
-| Free Trial | One-time 1-slot / 3-day entitlement; cannot be purchased |
+| Free Trial | One-time 1-slot / 5-day entitlement; cannot be purchased |
 | NEW_BUY_NOW | Alert when a matching Buy Now listing is newly seen |
 | BUY_NOW_ACTIVATED | Alert when an existing listing gains Buy Now |
 
@@ -258,7 +258,7 @@ Paused watches do not alert and **do not free a slot**. Resume does not send a b
 |--|--|
 | **Name** | Free Trial |
 | **Slots** | 1 car watch |
-| **Duration** | **3 days** |
+| **Duration** | **5 days** |
 | **Price** | Free |
 | **Rules** | Auto-started for eligible new users. Not purchasable. No auto-renew. Upgrade anytime with Stripe. When trial ends, watches pause until a paid plan is active. |
 
@@ -315,7 +315,7 @@ Paused watches do not alert and **do not free a slot**. Resume does not send a b
 |-------|-------|
 | Buy Now focus | Product + help copy; Copart & IAAI adapters |
 | Telegram-native | Bot alerts + Mini App |
-| Low friction start | Auto free trial (1 watch / 3 days) |
+| Low friction start | Auto free trial (1 watch / 5 days) |
 | Clear capacity | Slot-based plans (5 / 10 / 15) |
 | Modern payments | Stripe + Apple Pay / Google Pay |
 
@@ -339,7 +339,7 @@ Paused watches do not alert and **do not free a slot**. Resume does not send a b
 |----------------|---------------|
 | Monitors Copart & IAAI Buy Now | Instant / real-time scraping / millisecond alerts |
 | Telegram alerts for matching listings | We bid, buy, or “snipe” for you |
-| Free **3-day** trial (1 watch) | Free **7-day** trial (outdated) |
+| Free **5-day** trial (1 watch) | Free **7-day** trial (outdated) |
 | Plans from €45 / week (5 watches) | Telegram Stars prices as current |
 | Checks periodically (minutes-scale) | Guaranteed you won’t miss a deal |
 | Always verify on the auction site | Listing will still be available |
@@ -447,7 +447,7 @@ Always localize numbers/currency formats correctly. Keep brand terms: Copart, IA
 ## 5. Offer & discount system (for promo LLMs)
 
 ### Default offer stack (no discount needed)
-1. **Lead magnet:** Free trial — 1 watch / 3 days  
+1. **Lead magnet:** Free trial — 1 watch / 5 days  
 2. **Anchor plan:** Monthly €89 / 10 watches (Most popular)  
 3. **Value plan:** 3-Month €179 / 15 watches (Best value)  
 4. **Entry paid:** Weekly €45 / 5 watches  
@@ -535,7 +535,7 @@ Always localize numbers/currency formats correctly. Keep brand terms: Copart, IA
 - Stop refreshing Copart. Start a Watch.  
 - Matching Buy Now? You’ll get the ping.  
 - Copart + IAAI. One Telegram bot.  
-- 1 free watch for 3 days  
+- 1 free watch for 5 days  
 
 ### Subheads
 - Create a Watch with make, model, years, and max Buy Now price. We monitor Copart and IAAI and message you when a match appears.  
@@ -599,5 +599,5 @@ Always localize numbers/currency formats correctly. Keep brand terms: Copart, IA
 
 *Newest first. One line per revision: what changed and why.*
 
-- v2 (2026-08-12) — Full refresh for marketing LLMs: Stripe/EUR pricing, 3-day trial, support @buynowsniper_supportbot, dual brand notes, offers/discounts system, visual direction, channel playbooks, claims checklist updates (Stars/7-day removed).  
+- v2 (2026-08-12) — Full refresh for marketing LLMs: Stripe/EUR pricing, 5-day trial, support @buynowsniper_supportbot, dual brand notes, offers/discounts system, visual direction, channel playbooks, claims checklist updates (Stars/7-day removed).  
 - v1 (2026-08-05) — Initial context auto-drafted from codebase: Auction Watch positioning, Watch/alert features, Free Trial + Weekly/Monthly/3-Month Stars pricing, billing rules, and claims checklist.
